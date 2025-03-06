@@ -30,7 +30,13 @@ export function restructure(
   const propList: Prop[] = []
   for (const param of node.params) {
     const path = `${HELPER_PREFIX}props${index++ || ''}`
-    const props = getProps(param, path, s, [], options)
+    const props = getProps(
+      param,
+      path + (options.unwrapRef ? '.value' : ''),
+      s,
+      [],
+      options,
+    )
     if (props) {
       const hasDefaultValue = props.some((i) => i.defaultValue)
       s.overwrite(param.start!, param.end!, path)
@@ -130,11 +136,17 @@ function getProps(
       : node.type === 'ArrayPattern'
         ? node.elements
         : []
-  if (!properties.length) return
+  if (!properties.length) {
+    if (options.unwrapRef) {
+      properties.push(node as any)
+    } else {
+      return
+    }
+  }
 
   const propNames: string[] = []
   properties.forEach((prop, index) => {
-    const value = `[${index}]${options.unwrapRef ? '.value' : ''}`
+    const value = options.unwrapRef ? '' : `[${index}]`
     if (prop?.type === 'Identifier') {
       // { foo }
       props.push({ name: prop.name, path, value })

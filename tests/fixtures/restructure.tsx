@@ -21,3 +21,7 @@ const App1 = /* @restructure */ ([{root: {foo}}]) => (
 /* @restructure */ function App4([foo, bar = 1, ...rest]){
   return <>{[foo, bar, rest]}</>
 }
+
+/* @restructure */ function App5({ foo } , bar ){
+  return <>{[foo, bar]}</>
+}

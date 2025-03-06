@@ -36,9 +36,6 @@ importers:
       '@sxzz/prettier-config':
         specifier: ^2.2.0
         version: 2.2.0
-      '@sxzz/test-utils':
-        specifier: ^0.5.1
-        version: 0.5.1(esbuild@0.25.0)(rollup@4.34.8)(vitest@3.0.7(@types/debug@4.1.12)(@types/node@22.13.8)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0))
       '@types/node':
         specifier: ^22.13.8
         version: 22.13.8
@@ -3734,15 +3731,6 @@ snapshots:
       - typescript
 
   '@sxzz/prettier-config@2.2.0': {}
-
-  '@sxzz/test-utils@0.5.1(esbuild@0.25.0)(rollup@4.34.8)(vitest@3.0.7(@types/debug@4.1.12)(@types/node@22.13.8)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0))':
-    dependencies:
-      tinyglobby: 0.2.12
-      unplugin-utils: 0.2.4
-      vitest: 3.0.7(@types/debug@4.1.12)(@types/node@22.13.8)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0)
-    optionalDependencies:
-      esbuild: 0.25.0
-      rollup: 4.34.8
 
   '@sxzz/test-utils@0.5.1(esbuild@0.25.0)(rollup@4.34.9)(vitest@3.0.7(@types/debug@4.1.12)(@types/node@22.13.8)(jiti@2.4.2)(tsx@4.19.3)(yaml@2.7.0))':
     dependencies:

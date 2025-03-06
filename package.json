@@ -76,7 +76,6 @@
   "devDependencies": {
     "@sxzz/eslint-config": "^5.2.0",
     "@sxzz/prettier-config": "^2.2.0",
-    "@sxzz/test-utils": "^0.5.1",
     "@types/node": "^22.13.8",
     "@vue-macros/test-utils": "3.0.0-beta.3",
     "bumpp": "^10.0.3",
