@@ -4,7 +4,7 @@
  * @module
  */
 
-import { Starter } from './index'
+import { Restructure } from './index'
 
 /**
  * Esbuild plugin
@@ -12,11 +12,11 @@ import { Starter } from './index'
  * @example
  * ```ts
  * import { build } from 'esbuild'
- * import Starter from 'unplugin-restructure/esbuild'
+ * import Restructure from 'unplugin-restructure/esbuild'
  * 
- * build({ plugins: [Starter()] })
+ * build({ plugins: [Restructure()] })
 ```
  */
-const esbuild = Starter.esbuild as typeof Starter.esbuild
+const esbuild = Restructure.esbuild as typeof Restructure.esbuild
 export default esbuild
 export { esbuild as 'module.exports' }

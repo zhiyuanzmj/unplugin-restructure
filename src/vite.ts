@@ -4,7 +4,7 @@
  * @module
  */
 
-import { Starter } from './index'
+import { Restructure } from './index'
 
 /**
  * Vite plugin
@@ -12,13 +12,13 @@ import { Starter } from './index'
  * @example
  * ```ts
  * // vite.config.ts
- * import Starter from 'unplugin-restructure/vite'
+ * import Restructure from 'unplugin-restructure/vite'
  *
  * export default defineConfig({
- *   plugins: [Starter()],
+ *   plugins: [Restructure()],
  * })
  * ```
  */
-const vite = Starter.vite as typeof Starter.vite
+const vite = Restructure.vite as typeof Restructure.vite
 export default vite
 export { vite as 'module.exports' }

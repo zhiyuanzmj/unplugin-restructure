@@ -4,7 +4,7 @@
  * @module
  */
 
-import { Starter } from './index'
+import { Restructure } from './index'
 
 /**
  * Farm plugin
@@ -12,13 +12,13 @@ import { Starter } from './index'
  * @example
  * ```ts
  * // farm.config.js
- * import Starter from 'unplugin-restructure/farm'
+ * import Restructure from 'unplugin-restructure/farm'
  *
  * export default {
- *   plugins: [Starter()],
+ *   plugins: [Restructure()],
  * }
  * ```
  */
-const farm = Starter.farm as typeof Starter.farm
+const farm = Restructure.farm as typeof Restructure.farm
 export default farm
 export { farm as 'module.exports' }

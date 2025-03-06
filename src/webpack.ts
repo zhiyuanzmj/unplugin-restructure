@@ -4,7 +4,7 @@
  * @module
  */
 
-import { Starter } from './index'
+import { Restructure } from './index'
 
 /**
  * Webpack plugin
@@ -12,13 +12,13 @@ import { Starter } from './index'
  * @example
  * ```js
  * // webpack.config.js
- * import Starter from 'unplugin-restructure/webpack'
+ * import Restructure from 'unplugin-restructure/webpack'
  *
  * default export {
- *  plugins: [Starter()],
+ *  plugins: [Restructure()],
  * }
  * ```
  */
-const webpack = Starter.webpack as typeof Starter.webpack
+const webpack = Restructure.webpack as typeof Restructure.webpack
 export default webpack
 export { webpack as 'module.exports' }

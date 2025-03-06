@@ -4,7 +4,7 @@
  * @module
  */
 
-import { Starter } from './index'
+import { Restructure } from './index'
 
 /**
  * Rollup plugin
@@ -12,13 +12,13 @@ import { Starter } from './index'
  * @example
  * ```ts
  * // rollup.config.js
- * import Starter from 'unplugin-restructure/rollup'
+ * import Restructure from 'unplugin-restructure/rollup'
  *
  * export default {
- *   plugins: [Starter()],
+ *   plugins: [Restructure()],
  * }
  * ```
  */
-const rollup = Starter.rollup as typeof Starter.rollup
+const rollup = Restructure.rollup as typeof Restructure.rollup
 export default rollup
 export { rollup as 'module.exports' }

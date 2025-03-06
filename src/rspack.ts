@@ -4,7 +4,7 @@
  * @module
  */
 
-import { Starter } from './index'
+import { Restructure } from './index'
 
 /**
  * Rspack plugin
@@ -12,13 +12,13 @@ import { Starter } from './index'
  * @example
  * ```js
  * // rspack.config.js
- * import Starter from 'unplugin-restructure/rspack'
+ * import Restructure from 'unplugin-restructure/rspack'
  *
  * default export {
- *  plugins: [Starter()],
+ *  plugins: [Restructure()],
  * }
  * ```
  */
-const rspack = Starter.rspack as typeof Starter.rspack
+const rspack = Restructure.rspack as typeof Restructure.rspack
 export default rspack
 export { rspack as 'module.exports' }

@@ -2,7 +2,7 @@ import path from 'node:path'
 import { rollupBuild, testFixtures } from '@sxzz/test-utils'
 import { RollupVueJsx } from '@vue-macros/test-utils'
 import { describe } from 'vitest'
-import Starter from '../src/rollup'
+import Restructure from '../src/rollup'
 
 describe('rollup', async () => {
   const { dirname } = import.meta
@@ -11,7 +11,7 @@ describe('rollup', async () => {
     async (args, id) => {
       const { snapshot } = await rollupBuild(id, [
         RollupVueJsx() as any,
-        Starter(),
+        Restructure(),
       ])
       return snapshot
     },

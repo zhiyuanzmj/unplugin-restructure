@@ -4,7 +4,7 @@
  * @module
  */
 
-import { Starter } from './index'
+import { Restructure } from './index'
 
 /**
  * Rolldown plugin
@@ -12,13 +12,13 @@ import { Starter } from './index'
  * @example
  * ```ts
  * // rolldown.config.js
- * import Starter from 'unplugin-restructure/rolldown'
+ * import Restructure from 'unplugin-restructure/rolldown'
  *
  * export default {
- *   plugins: [Starter()],
+ *   plugins: [Restructure()],
  * }
  * ```
  */
-const rolldown = Starter.rolldown as typeof Starter.rolldown
+const rolldown = Restructure.rolldown as typeof Restructure.rolldown
 export default rolldown
 export { rolldown as 'module.exports' }

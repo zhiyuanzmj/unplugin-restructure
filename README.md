@@ -8,15 +8,37 @@
 npm i -D unplugin-restructure
 ```
 
+### Usage
+
+Only functions that start with `/* @restructure */` will be transfromed.
+
+```tsx
+/* @restructure */ function App({ foo, bar: [baz] }){
+  return {
+    foo,
+    baz
+  }
+}
+
+// convert to
+
+function App(__MACROS_props){
+  return {
+    foo: __MACROS_props.foo,
+    baz: __MACROS_props.bar[0]
+  }
+}
+```
+
 <details>
 <summary>Vite</summary><br>
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-restructure/vite'
+import Restructure from 'unplugin-restructure/vite'
 
 export default defineConfig({
-  plugins: [Starter()],
+  plugins: [Restructure()],
 })
 ```
 
@@ -27,10 +49,10 @@ export default defineConfig({
 
 ```ts
 // rollup.config.js
-import Starter from 'unplugin-restructure/rollup'
+import Restructure from 'unplugin-restructure/rollup'
 
 export default {
-  plugins: [Starter()],
+  plugins: [Restructure()],
 }
 ```
 
@@ -41,10 +63,10 @@ export default {
 
 ```ts
 // rolldown.config.js
-import Starter from 'unplugin-restructure/rolldown'
+import Restructure from 'unplugin-restructure/rolldown'
 
 export default {
-  plugins: [Starter()],
+  plugins: [Restructure()],
 }
 ```
 
@@ -55,10 +77,10 @@ export default {
 
 ```ts
 import { build } from 'esbuild'
-import Starter from 'unplugin-restructure/esbuild'
+import Restructure from 'unplugin-restructure/esbuild'
 
 build({
-  plugins: [Starter()],
+  plugins: [Restructure()],
 })
 ```
 
@@ -69,11 +91,11 @@ build({
 
 ```js
 // webpack.config.js
-import Starter from 'unplugin-restructure/webpack'
+import Restructure from 'unplugin-restructure/webpack'
 
 export default {
   /* ... */
-  plugins: [Starter()],
+  plugins: [Restructure()],
 }
 ```
 
@@ -84,11 +106,11 @@ export default {
 
 ```ts
 // rspack.config.js
-import Starter from 'unplugin-restructure/rspack'
+import Restructure from 'unplugin-restructure/rspack'
 
 export default {
   /* ... */
-  plugins: [Starter()],
+  plugins: [Restructure()],
 }
 ```
 
