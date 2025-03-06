@@ -10,7 +10,7 @@
     "strict": true,
     "noUnusedLocals": true,
     "declaration": true,
-    "isolatedDeclarations": true,
+    "isolatedDeclarations": false,
     "esModuleInterop": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,

@@ -1,10 +1,82 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`rollup > basic.js 1`] = `
-"// basic.js
-// unplugin-restructure injected
-const num = 10;
+exports[`rollup > restructure.tsx 1`] = `
+"// restructure.js
+import { createVNode, Fragment, createPropsRestProxy } from 'vue';
 
-export { num };
+function resolveDefaultProps(paths) {
+  const result = {};
+
+  for (const path of Object.keys(paths)) {
+    const segments = path.split(/[?.[\\]]/).filter(Boolean);
+    let current = result;
+
+    for (let i = 0; i < segments.length; i++) {
+      const segment = segments[i];
+      if (i === segments.length - 1) {
+        current[segment] = paths[path];
+      } else {
+        if (!current[segment]) {
+          current[segment] = Number.isNaN(Number(segments[i + 1])) ? {} : [];
+        }
+        current = current[segment];
+      }
+    }
+  }
+
+  return result
+}
+
+function createPropsDefaultProxy(props, defaults) {
+  const defaultProps = resolveDefaultProps(defaults);
+  const result = {};
+
+  for (const key of [
+    ...new Set([...Object.keys(props), ...Object.keys(defaultProps)]),
+  ]) {
+    Object.defineProperty(result, key, {
+      enumerable: true,
+      get: () => (props[key] === undefined ? defaultProps[key] : props[key]),
+    });
+  }
+
+  return result
+}
+
+const App = /* @restructure */(__MACROS_props, __MACROS_props1) => {
+  function onClick({
+    foo
+  }) {
+    return {
+      foo,
+      baz: __MACROS_props1.baz.baz
+    };
+  }
+  ;
+  return [__MACROS_props[0][0][1], __MACROS_props[1].id.foo[0], __MACROS_props1.baz];
+};
+const App1 = /* @restructure */(__MACROS_props) => createVNode(Fragment, null, [[__MACROS_props[0].root.foo]]);
+
+/* @restructure */
+function App2(__MACROS_props, __MACROS_props1) {
+const __MACROS_default_props = createPropsDefaultProxy(__MACROS_props, {'.foo': 'bar'});
+const __MACROS_default_props1 = createPropsDefaultProxy(__MACROS_props1, {'[0]': 'foo'});
+const rest = createPropsRestProxy(__MACROS_default_props, ['foo', 'baz']);
+  return createVNode(Fragment, null, [[__MACROS_default_props.foo, __MACROS_default_props.baz, rest, __MACROS_default_props1[0]]]);
+}
+
+/* @restructure */
+function App3(__MACROS_props) {
+const __MACROS_default_props = createPropsDefaultProxy(__MACROS_props, {'.bar': 1});
+const rest = createPropsRestProxy(__MACROS_default_props, ['foo', 'bar']);
+  return createVNode(Fragment, null, [[__MACROS_default_props.foo, __MACROS_default_props.bar, rest]]);
+}
+
+/* @restructure */
+function App4(__MACROS_props) {
+const __MACROS_default_props = createPropsDefaultProxy(__MACROS_props, {'[1]': 1});
+const rest = createPropsRestProxy(__MACROS_default_props, ['foo', 'bar']);
+  return createVNode(Fragment, null, [[__MACROS_default_props[0], __MACROS_default_props[1], rest]]);
+}
 "
-`
+`;
