@@ -1,0 +1,90 @@
+{
+  "name": "unplugin-restructure",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.5.2",
+  "description": "Description.",
+  "type": "module",
+  "keywords": [
+    "unplugin",
+    "vite",
+    "webpack",
+    "rspack",
+    "rollup",
+    "rolldown",
+    "esbuild",
+    "farm"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/zhiyuanzmj/unplugin-restructure#readme",
+  "bugs": {
+    "url": "https://github.com/zhiyuanzmj/unplugin-restructure/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhiyuanzmj/unplugin-restructure.git"
+  },
+  "author": "zhiyuanzmj",
+  "funding": "https://github.com/sponsors/sxzz",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./vite": "./dist/vite.js",
+    "./webpack": "./dist/webpack.js",
+    "./rspack": "./dist/rspack.js",
+    "./rollup": "./dist/rollup.js",
+    "./rolldown": "./dist/rolldown.js",
+    "./esbuild": "./dist/esbuild.js",
+    "./farm": "./dist/farm.js",
+    "./api": "./dist/api.js",
+    "./*": "./*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./*"
+      ]
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && pnpm publish",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "unplugin": "^2.2.0",
+    "unplugin-utils": "^0.2.4"
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config": "^5.2.0",
+    "@sxzz/prettier-config": "^2.2.0",
+    "@sxzz/test-utils": "^0.5.1",
+    "@types/node": "^22.13.8",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.21.0",
+    "oxc-transform": "^0.53.0",
+    "prettier": "^3.5.3",
+    "tsdown": "^0.6.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7"
+  },
+  "engines": {
+    "node": ">=18.12.0"
+  },
+  "prettier": "@sxzz/prettier-config"
+}
